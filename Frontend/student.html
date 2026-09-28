@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Attendance - LAN Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+            LAN Attendance
+        </div>
+
+        <div class="header-text">
+            Student Attendance
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main class="student-container">
+
+        <!-- Welcome -->
+
+        <section class="student-welcome">
+
+            <div class="student-icon">
+                🎓
+            </div>
+
+            <h1>Mark Your Attendance</h1>
+
+            <p>
+                Enter your roll number and mark attendance
+                for the current laboratory session.
+            </p>
+
+        </section>
+
+
+        <!-- Attendance Card -->
+
+        <section class="attendance-card">
+
+            <h2>Student Details</h2>
+
+            <label for="studentRoll">
+                Roll Number
+            </label>
+
+            <input
+                type="text"
+                id="studentRoll"
+                placeholder="Enter your roll number"
+            >
+
+
+            <!-- Active Session -->
+
+            <div class="active-session">
+
+                <div class="session-title">
+                    Current Attendance Session
+                </div>
+
+                <div class="session-details">
+
+                    <div>
+                        <span>Subject</span>
+                        <strong id="currentSubject">
+                            DBMS
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Session ID</span>
+                        <strong id="currentSession">
+                            LAB001
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Status</span>
+                        <strong class="session-active">
+                            ACTIVE
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <button
+                class="attendance-button"
+                onclick="markAttendance()"
+            >
+                MARK ATTENDANCE
+            </button>
+
+
+            <button
+                class="clear-button"
+                onclick="clearStudentForm()"
+            >
+                CLEAR
+            </button>
+
+
+            <!-- Result -->
+
+            <div
+                id="attendanceResult"
+                class="attendance-result"
+            ></div>
+
+        </section>
+
+
+        <!-- Information -->
+
+        <section class="instructions-card">
+
+            <h3>Instructions</h3>
+
+            <ul>
+
+                <li>
+                    Enter your correct roll number.
+                </li>
+
+                <li>
+                    Make sure the attendance session is active.
+                </li>
+
+                <li>
+                    Click "Mark Attendance" only once.
+                </li>
+
+                <li>
+                    Wait for the attendance confirmation.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 College Lab LAN Attendance System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

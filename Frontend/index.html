@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Attendance System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            LAN Attendance
+        </div>
+
+        <div class="header-text">
+            College Lab Attendance Collection System
+        </div>
+    </header>
+
+
+    <main class="home-container">
+
+        <div class="welcome-section">
+
+            <div class="icon">
+                ✓
+            </div>
+
+            <h1>LAN Attendance System</h1>
+
+            <p>
+                A simple and secure system for managing
+                college laboratory attendance over LAN.
+            </p>
+
+        </div>
+
+
+        <div class="role-container">
+
+            <div class="role-card">
+
+                <div class="role-icon">
+                    👨‍🏫
+                </div>
+
+                <h2>Admin / Teacher</h2>
+
+                <p>
+                    Create sessions, manage students
+                    and monitor attendance.
+                </p>
+
+                <button onclick="openAdmin()">
+                    Open Admin Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-icon">
+                    👨‍🎓
+                </div>
+
+                <h2>Student</h2>
+
+                <p>
+                    Enter your roll number and mark
+                    your attendance.
+                </p>
+
+                <button onclick="openStudent()">
+                    Mark Attendance
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>© 2026 College Lab LAN Attendance System</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

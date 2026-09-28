@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - LAN Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+            LAN Attendance
+        </div>
+
+        <div class="header-text">
+            Admin Dashboard
+        </div>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+
+    <main class="dashboard-container">
+
+        <!-- Welcome -->
+
+        <section class="dashboard-welcome">
+
+            <h1>Admin Dashboard</h1>
+
+            <p>
+                Manage students, laboratory sessions and attendance.
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard Cards -->
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">
+                    👨‍🎓
+                </div>
+
+                <h2>Students</h2>
+
+                <p>
+                    Add and manage students registered for laboratory attendance.
+                </p>
+
+                <button onclick="showSection('students')">
+                    Manage Students
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">
+                    📚
+                </div>
+
+                <h2>Sessions</h2>
+
+                <p>
+                    Create, open, close and manage laboratory sessions.
+                </p>
+
+                <button onclick="showSection('sessions')">
+                    Manage Sessions
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">
+                    📋
+                </div>
+
+                <h2>Attendance</h2>
+
+                <p>
+                    View student attendance records for laboratory sessions.
+                </p>
+
+                <button onclick="showSection('attendance')">
+                    View Attendance
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Students Section -->
+
+        <section id="students" class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Student Management</h2>
+
+                    <p>
+                        Add and manage students.
+                    </p>
+                </div>
+
+                <button onclick="showSection('students')">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <h3>Add Student</h3>
+
+                <div class="form-row">
+
+                    <input
+                        type="text"
+                        id="rollNumber"
+                        placeholder="Roll Number"
+                    >
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Student Name"
+                    >
+
+                    <input
+                        type="text"
+                        id="division"
+                        placeholder="Division"
+                    >
+
+                    <button onclick="addStudent()">
+                        Add Student
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <h3>Student List</h3>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Division</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                        <tr>
+                            <td>101</td>
+                            <td>Rahul</td>
+                            <td>A</td>
+                        </tr>
+
+                        <tr>
+                            <td>102</td>
+                            <td>Priya</td>
+                            <td>A</td>
+                        </tr>
+
+                        <tr>
+                            <td>103</td>
+                            <td>Aman</td>
+                            <td>A</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Sessions Section -->
+
+        <section id="sessions" class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Session Management</h2>
+
+                    <p>
+                        Create and manage laboratory attendance sessions.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <h3>Create New Session</h3>
+
+                <div class="form-row">
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Subject"
+                    >
+
+                    <button onclick="createSession()">
+                        Create Session
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <h3>Sessions</h3>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Session ID</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="sessionTable">
+
+                        <tr>
+
+                            <td>LAB001</td>
+
+                            <td>DBMS</td>
+
+                            <td>28-09-2026</td>
+
+                            <td>03:30 PM</td>
+
+                            <td>
+                                <span class="status active">
+                                    ACTIVE
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="small-button">
+                                    Close
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Attendance Section -->
+
+        <section id="attendance" class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Attendance Records</h2>
+
+                    <p>
+                        View attendance marked by students.
+                    </p>
+
+                </div>
+
+                <button onclick="refreshAttendance()">
+                    Refresh Attendance
+                </button>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Division</th>
+                            <th>Session</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="attendanceTable">
+
+                        <tr>
+
+                            <td>101</td>
+                            <td>Rahul</td>
+                            <td>A</td>
+                            <td>LAB001</td>
+                            <td>28-09-2026</td>
+                            <td>03:35 PM</td>
+
+                            <td>
+                                <span class="status present">
+                                    PRESENT
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>102</td>
+                            <td>Priya</td>
+                            <td>A</td>
+                            <td>LAB001</td>
+                            <td>28-09-2026</td>
+                            <td>03:36 PM</td>
+
+                            <td>
+                                <span class="status present">
+                                    PRESENT
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 College Lab LAN Attendance System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
