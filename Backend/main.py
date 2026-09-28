@@ -13,13 +13,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
+import os
+
 def get_database_connection():
     return psycopg.connect(
-        host="localhost",
-        port=5432,
-        dbname="LAN_Attendence",
-        user="postgres",
-        password="Pillai@123"
+        host=os.getenv("DB_HOST"),
+        port=os.getenv("DB_PORT", "5432"),
+        dbname=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD")
     )
 
 
